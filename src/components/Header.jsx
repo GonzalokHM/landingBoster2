@@ -1,9 +1,14 @@
+import { Title } from "./ui/Title"
+import { Logo } from "./ui/Logo"
+import { HeaderContainer } from "./ui/HeaderStyle"
 
-export const Header = () => {
+const Header = () => {
   return (
-    <header>
-        <h2>LandingBooster</h2>
-        <img src="https://cdn-icons-png.flaticon.com/512/11744/11744612.png" alt="booster icon" />
-    </header>
+    <HeaderContainer>
+        <Title>LandingBooster</Title>
+        <Logo src="https://cdn-icons-png.flaticon.com/512/11744/11744612.png" alt="booster icon" />
+    </HeaderContainer>
   )
 }
+
+export default Header
