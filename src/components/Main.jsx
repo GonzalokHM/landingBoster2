@@ -1,16 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from './ui/Button';
-import { Title } from './ui/Title';
+import { Slogan } from './ui/Slogan';
 import { SubTitle } from './ui/SubTitle';
 import { Text } from './ui/Text';
 import { Flex } from './ui/Flex';
 import { Form } from './ui/Form';
 import { FormLabel } from './ui/FormLabel';
 import { FormInput } from './ui/FormInput';
+import { MainStyled } from './ui/MainStyled';
+import { List } from './ui/List';
+import { ListElement } from './ui/ListElement';
 
 const Main = () => {
+  const [scrollY, setScrollY] = useState(0);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [userData, setUserData] = useState({ nombre: '', correo: '' });
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollY(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Evitar el envío del formulario
@@ -27,46 +44,47 @@ const Main = () => {
   };
 
   return (
-    <main>
-        {!isFormSubmitted ? (
-      <Flex>
+    <MainStyled $scrollY={scrollY/10}>
+      {!isFormSubmitted ? (
         <Flex>
-          <Title>
-            Unlock Your Service&apos;s Potential with Pro Landing Pages
-          </Title>
-          <Text $variant="primary">
-            Experience the Unparalleled Quality of Handcrafted, SEO-Optimized
-            Landing Pages, Tailored to Your Unique Brand – No Templates, No AI,
-            Just Real Expertise.
-          </Text>
-        </Flex>
           <Flex>
+            <Slogan>
+              Unlock Your Service&apos;s Potential with Pro Landing Pages
+            </Slogan>
+            <Text $variant="primary">
+              Experience the Unparalleled Quality of Handcrafted, SEO-Optimized
+              Landing Pages, Tailored to Your Unique Brand – No Templates, No
+              AI, Just Real Expertise.
+            </Text>
             <Button $variant="primary" onClick={handleGoButton}>
-              Go
+              GO
             </Button>
+          </Flex>
+          <Flex>
             <Flex>
               <SubTitle>3x your leads and sales</SubTitle>
-              <Text>
-                Ready to supercharge your service&apos;s online presence?
-                Discover the power of our handcrafted, SEO-optimized landing
-                pages that are tailored exclusively to your brand. By taking the
-                next step and filling out the form with your name and email,
-                you&apos;re not only gaining access to a wealth of knowledge
-                about landing pages but also unlocking a FREE downloadable
-                eBook, a comprehensive guide that covers everything you need to
-                know to make your landing pages truly effective. Don&apos;t
-                miss out on this opportunity to elevate your online marketing
-                game. Simply fill in your details below and click &apos;Try
-                Now&apos; to get started. Your path to successful landing
-                pages begins here.
-              </Text>
+              <List>
+                <ListElement>🚀 Supercharge your online presence.</ListElement>
+                <ListElement>
+                  🔍 Get handcrafted, SEO-optimized landing pages tailored to
+                  your brand.
+                </ListElement>
+                <ListElement>
+                  📚 Unlock a FREE downloadable eBook covering everything you
+                  need to know.
+                </ListElement>
+                <ListElement>💡 Elevate your online marketing game with ease.</ListElement>
+              </List>
             </Flex>
             <SubTitle $background="action">Take the Next Step </SubTitle>
+            <Text>
+             Elevate Your Strategy: Redefine Your Approach with Landing Booster
+            </Text>
             <Form id="form" onSubmit={handleSubmit}>
-              <FormLabel htmlFor="nombre">Nombre completo:</FormLabel>
+              <FormLabel htmlFor="nombre">Name:</FormLabel>
               <FormInput type="text" id="nombre" name="nombre" required />
 
-              <FormLabel htmlFor="correo">Correo electrónico:</FormLabel>
+              <FormLabel htmlFor="correo">Email:</FormLabel>
               <FormInput type="email" id="correo" name="correo" required />
 
               <Button $variant="secondary" type="submit">
@@ -74,17 +92,17 @@ const Main = () => {
               </Button>
             </Form>
           </Flex>
-      </Flex>
-        ) : (
-          <Flex>
-            <Text>
-              Gracias {userData.nombre}, te hemos enviado el eBook y más
-              información a {userData.correo}.
-            </Text>
-          </Flex>
-        )}
-    </main>
+        </Flex>
+      ) : (
+        <Flex>
+          <Text>
+            Gracias {userData.nombre}, te hemos enviado el eBook y más
+            información a {userData.correo}.
+          </Text>
+        </Flex>
+      )}
+    </MainStyled>
   );
 };
 
-export default Main
+export default Main;

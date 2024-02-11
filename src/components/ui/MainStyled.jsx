@@ -1,10 +1,24 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Main = styled.main`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    min-height: 80vh;
-    `
+export const MainStyled = styled.main.attrs(({ $scrollY }) => {
+  const dynamicAngle = 45 + ($scrollY % 360); // Cambia la dirección del gradiente
+  const baseOpacity = 0.5;
+  const colorStartOpacity = baseOpacity + Math.abs(Math.sin($scrollY / 100)*0.5); // Genera cambios en la opacidad del color de inicio
+  const colorEndOpacity =baseOpacity + Math.abs(Math.cos($scrollY / 100) *0.5); // Genera cambios en la opacidad del color final
+
+  return {
+    style: {
+      background: `linear-gradient(${dynamicAngle}deg, rgba(0,255,0,${colorStartOpacity}) ${
+        $scrollY % 100
+      }%, rgba(128,0,128,${colorEndOpacity}) 100%)`,
+    },
+  };
+})`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+`;

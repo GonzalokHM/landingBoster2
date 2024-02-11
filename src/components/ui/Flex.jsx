@@ -5,6 +5,7 @@ export const Flex = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding:${(props)=> props.$padding ? `${props.$padding}px` : "0"};
+    margin: 0;
 
 `
