@@ -44,7 +44,7 @@ const Main = () => {
   };
 
   return (
-    <MainStyled $scrollY={scrollY/10}>
+    <MainStyled $scrollY={scrollY/5}>
       {!isFormSubmitted ? (
         <Flex>
           <Flex>
@@ -76,8 +76,9 @@ const Main = () => {
                 <ListElement>💡 Elevate your online marketing game with ease.</ListElement>
               </List>
             </Flex>
-            <SubTitle $background="action">Take the Next Step </SubTitle>
-            <Text>
+            <SubTitle $setColor="action">Take the Next Step </SubTitle>
+            <Flex $direction= "row" $padding= "50">
+            <Text $align= "left">
              Elevate Your Strategy: Redefine Your Approach with Landing Booster
             </Text>
             <Form id="form" onSubmit={handleSubmit}>
@@ -91,6 +92,7 @@ const Main = () => {
                 Try Now
               </Button>
             </Form>
+            </Flex>
           </Flex>
         </Flex>
       ) : (

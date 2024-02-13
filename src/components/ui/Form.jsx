@@ -14,5 +14,6 @@ export const Form =styled.form`
     border: 1px solid rgba(255, 255, 255, 0.12);
     ${desktop} {
         margin: 12px 0 30px;
+        width: 250px;
     }
 `

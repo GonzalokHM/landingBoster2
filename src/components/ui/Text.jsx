@@ -24,5 +24,7 @@ ${desktop} {
     padding: 30px;
     width: ${(props) =>
     props.$variant === "primary" ? "900px" : "460px"};
+     text-align: ${(props) =>
+    props.$align === "left" ? "left" : "center"};
 }
 `

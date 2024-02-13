@@ -13,5 +13,6 @@ export const List = styled.ul`
     min-height: 330px;
     min-width: 777px;
     margin: 30px 0 74px 0;
+    border: 2px solid #42b4ea;
     }
 `

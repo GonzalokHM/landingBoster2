@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { desktop } from "../styles/medias";
 
 export const FormLabel = styled.label`
     padding: 2px;
@@ -6,4 +7,8 @@ export const FormLabel = styled.label`
     font-size: 12px;
     font-weight: bold;
     color: white;
+    ${desktop}{
+        font-size: 15px;
+        text-align: left;
+    }
 `

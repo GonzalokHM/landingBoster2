@@ -12,5 +12,6 @@ export const ListElement = styled.li`
     ${desktop} {
         width: 477px;
         font-size: 27px;
+        font-weight: bold;
     }
 `
