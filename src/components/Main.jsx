@@ -10,6 +10,7 @@ import { FormInput } from './ui/FormInput';
 import { MainStyled } from './ui/MainStyled';
 import { List } from './ui/List';
 import { ListElement } from './ui/ListElement';
+import Comments from './CommentsApi';
 
 const Main = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -77,7 +78,7 @@ const Main = () => {
               </List>
             </Flex>
             <SubTitle $setColor="action">Take the Next Step </SubTitle>
-            <Flex $direction= "row" $padding= "50">
+            <Flex $direction $padding= "50">
             <Text $align= "left">
              Elevate Your Strategy: Redefine Your Approach with Landing Booster
             </Text>
@@ -101,6 +102,7 @@ const Main = () => {
             Gracias {userData.nombre}, te hemos enviado el eBook y más
             información a {userData.correo}.
           </Text>
+          <Comments/>
         </Flex>
       )}
     </MainStyled>

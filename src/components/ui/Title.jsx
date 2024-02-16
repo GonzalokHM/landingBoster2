@@ -10,6 +10,6 @@ ${mobile} {
     color: #7c036c
 }
 ${desktop} {
-    font-size: 50px;
+    font-size: 51px;
 }
 `

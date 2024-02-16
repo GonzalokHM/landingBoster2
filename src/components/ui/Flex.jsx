@@ -10,7 +10,7 @@ export const Flex = styled.div`
     margin: 0;
 
     ${desktop}{
-        flex-direction: ${(props) => props.$direction ?  `row` : "colum" }
+        flex-direction: ${(props) => props.$direction ?  "row" : "colum" };
     }
 
 `
