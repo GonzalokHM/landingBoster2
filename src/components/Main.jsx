@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense  } from 'react';
 import { Button } from './ui/Button';
 import { Slogan } from './ui/Slogan';
 import { SubTitle } from './ui/SubTitle';
@@ -10,7 +10,9 @@ import { FormInput } from './ui/FormInput';
 import { MainStyled } from './ui/MainStyled';
 import { List } from './ui/List';
 import { ListElement } from './ui/ListElement';
-import Comments from './CommentsApi';
+
+
+const Comments = React.lazy(() => import('./CommentsApi'));
 
 const Main = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -99,11 +101,14 @@ const Main = () => {
         </Flex>
       ) : (
         <Flex>
+
           <Text $variant="fullWidth">
             Gracias {userData.nombre}, te hemos enviado el eBook y más
             información a {userData.correo}.
           </Text>
+          <Suspense fallback={<div>Cargando comentarios...</div>}>
           <Comments userEmail={userData.correo}/>
+          </Suspense>
         </Flex>
       )}
     </MainStyled>
