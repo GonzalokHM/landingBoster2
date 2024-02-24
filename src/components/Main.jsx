@@ -33,8 +33,9 @@ const Main = () => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Evitar el envío del formulario
     // Capturar los datos del formulario
-    const nombre = event.target.nombre.value;
-    const correo = event.target.correo.value;
+    const formData = new FormData(event.target);
+    const nombre = formData.get('nombre');
+    const correo = formData.get('correo');
     setUserData({ nombre, correo }); // Guardar los datos del usuario
     setIsFormSubmitted(true); // Cambiar el estado para mostrar el mensaje de agradecimiento
   };
@@ -45,7 +46,7 @@ const Main = () => {
   };
 
   return (
-    <MainStyled $scrollY={scrollY/5}>
+    <MainStyled data-testid="main-styled" $scrollY={scrollY/5}>
       {!isFormSubmitted ? (
         <Flex>
           <Flex>
@@ -64,7 +65,7 @@ const Main = () => {
           <Flex>
             <Flex>
               <SubTitle>3x your leads and sales</SubTitle>
-              <List>
+              <List data-testid="list-container">
                 <ListElement>🚀 Supercharge your online presence.</ListElement>
                 <ListElement>
                   🔍 Get handcrafted, SEO-optimized landing pages tailored to
@@ -98,11 +99,11 @@ const Main = () => {
         </Flex>
       ) : (
         <Flex>
-          <Text>
+          <Text $variant="fullWidth">
             Gracias {userData.nombre}, te hemos enviado el eBook y más
             información a {userData.correo}.
           </Text>
-          <Comments/>
+          <Comments userEmail={userData.correo}/>
         </Flex>
       )}
     </MainStyled>

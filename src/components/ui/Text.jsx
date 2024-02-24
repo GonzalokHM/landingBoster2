@@ -23,7 +23,9 @@ ${desktop} {
     font-size: 28px;
     padding: 30px;
     width: ${(props) =>
-    props.$variant === "primary" ? "900px" : "460px"};
+    props.$variant === "primary"  ? "900px" :
+    props.$variant === "fullWidth"  ? "auto" : "460px"};
+    
      text-align: ${(props) =>
     props.$align === "left" ? "left" : "center"};
 }

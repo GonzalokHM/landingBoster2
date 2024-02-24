@@ -41,6 +41,8 @@ export const Button = styled.button`
     ${(props) =>
       props.$variant === 'primary' &&
       'width: 100px; border: 2px outset #ff00dd;'}
-    margin: 2px 0 50px;
+    margin: ${(props) => (props.$commentsMarging ? '2px' : '2px 0 50px')};
+    align-self: center;
+    width: 150px;
   }
 `;

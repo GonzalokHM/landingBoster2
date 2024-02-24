@@ -9,7 +9,7 @@ const commentsCards = css`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white; 
   padding: 20px;
-  max-width: 80vw; 
+  max-width: 44vw; 
   &:first-child {
     margin-left: 5px;
   }

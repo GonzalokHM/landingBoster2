@@ -3,4 +3,4 @@ export const desktopStartWidth = 900;
 
 export const desktop = `@media(min-width: ${desktopStartWidth}px)`
 export const tablet = `@media(min-width: ${TabletStartsWidth}px)`
-export const mobile = `@media(max-width: ${TabletStartsWidth - 1}px)`
+export const mobile = `@media(max-width: ${TabletStartsWidth}px)`
