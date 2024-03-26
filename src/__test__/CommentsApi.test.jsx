@@ -7,22 +7,24 @@ import { render, screen, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Comments from '../components/CommentsApi';
 
-// mockear fetch
-vi.spyOn(window, 'fetch').mockImplementation(() =>
-  Promise.resolve({
-    json: () => Promise.resolve([
-      { id: 1, email: "user@example.com", body: "Comment 1" },
-      { id: 2, email: "user2@example.com", body: "Comment 2" },
-    ]),
-  })
-);
-
+window.HTMLElement.prototype.scrollIntoView = vi.fn();
 describe('Comments component', () => {
   beforeEach(() => {
     // Limpia las llamadas mock entre tests
     vi.clearAllMocks();
   });
-
+  
+  // mockear fetch
+  vi.spyOn(window, 'fetch').mockImplementation(() =>
+    Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve([
+        { id: 1, email: "user@example.com", body: "Comment 1" },
+        { id: 2, email: "user2@example.com", body: "Comment 2" },
+      ]),
+    })
+  );
+  
   it('loads and displays initial comments from the API', async () => {
     render(<Comments userEmail="test@example.com" />);
 

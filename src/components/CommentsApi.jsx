@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
-import { SubTitle } from './ui/SubTitle';
-import { List } from './ui/List';
-import { ListElement } from './ui/ListElement';
-import { Flex } from './ui/Flex';
-import { Remarck } from './ui/Remarck';
-import { Carrusel } from './ui/Carrusel';
+import {
+  SubTitle,
+  List,
+  ListElement,
+  Flex,
+  Remarck,
+  Carrusel,
+  FormInput,
+  Form,
+  Button,
+} from './ui/ui';
 import PropTypes from 'prop-types';
-import { FormInput } from './ui/FormInput';
-import { Form } from './ui/Form';
-import { Button } from './ui/Button';
 
 const Comments = ({ userEmail }) => {
   const [comments, setComments] = useState([]);
@@ -55,7 +57,8 @@ const Comments = ({ userEmail }) => {
       <Carrusel>
         <List $commentsStyles>
           {comments.map((comment, index) => (
-            <ListElement data-testid="comment"
+            <ListElement
+              data-testid="comment"
               $small
               $cards
               key={comment.id}

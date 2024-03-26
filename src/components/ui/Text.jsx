@@ -5,10 +5,10 @@ export const Text = styled.p`
     font-size: 20px;
     text-align: center;
     font-weight: bold;
-    text-shadow:   ${(props) => props.$variant === "primary" ? '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' :
+    text-shadow:   ${(props) => props.$variant === "primary" ? '-1px -1px 0 #fff, 1px -1px 0 #00fffa, -1px 1px 0 #00fffa, 1px 1px 0 #fff' :
     '-1px -1px 0 deepskyblue, 1px -1px 0 deepskyblue, -1px 1px 0 deepskyblue, 1px 1px 0 deepskyblue'};
     color: ${(props) =>
-    props.$variant === "primary" ? "deepskyblue" : "black"};
+    props.$variant === "primary" ? "24292f" : "black"};
     padding: 5px;
     ${(props)=>
     props.$variant === "secondary" && "background-image: url(https://cdn.pixabay.com/photo/2022/08/08/14/45/smartphone-7372865_640.jpg)"};
