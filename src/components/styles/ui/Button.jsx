@@ -1,20 +1,20 @@
-import styled, { css } from 'styled-components';
-import { desktop, mobile } from '../styles/medias';
+import styled, { css } from 'styled-components'
+import { desktop, mobile } from '../medias'
 
 const primaryButtonStyles = css`
-  background-color: #24292f;
-  color: azure;
-  border-radius: 20px;
-  margin: 34px 0 50px;
-  box-shadow: 0 4px 20px 16px rgb(0 0 0 / 53%);
-  border: 2px inset #fab216;
-`;
+  background-color: ${({ theme }) => theme.button.primary.backgroundColor};
+  color: ${({ theme }) => theme.button.primary.color};
+  border-radius: ${({ theme }) => theme.button.primary.borderRadius};
+  margin: ${({ theme }) => theme.button.primary.margin};
+  box-shadow: ${({ theme }) => theme.button.primary.boxShadow};
+  border: ${({ theme }) => theme.button.primary.border};
+`
 const secondaryButtonStyles = css`
-  background-color: #2aff00;
-  color: black;
-  border: outset;
-  margin: 15px;
-`;
+  background-color: ${({ theme }) => theme.button.secondary.backgroundColor};
+  color: ${({ theme }) => theme.button.secondary.color};
+  border: ${({ theme }) => theme.button.secondary.border};
+  margin: ${({ theme }) => theme.button.secondary.margin};
+`
 
 export const Button = styled.button`
   font-size: 20px;
@@ -45,4 +45,4 @@ export const Button = styled.button`
     align-self: center;
     width: 150px;
   }
-`;
+`

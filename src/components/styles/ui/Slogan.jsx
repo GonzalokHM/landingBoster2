@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { desktop, mobile } from '../styles/medias';
+import { desktop, mobile } from '../medias'
 
 export const Slogan = styled.h2`
   background-image: url(https://usercontent.one/wp/www.rendimientomaximo.com/wp-content/uploads/2023/05/Diseno-sin-titulo-3-1024x1024.jpg);
@@ -24,4 +24,4 @@ export const Slogan = styled.h2`
     text-transform: uppercase;
     margin-top: 3px;
   }
-`;
+`

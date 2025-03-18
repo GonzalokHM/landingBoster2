@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -14,10 +14,10 @@ export const GlobalStyles = createGlobalStyle`
     scrollbar-width: thin;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #f9ff00bd; /* Color del thumb cuando el usuario pasa el ratón sobre él */
+    background-color: #f9ff00bd; 
   }
-  scrollbar-color: #00fffabd #bde6ffbf; /* Color del thumb y del track */
-  scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+  scrollbar-color: #00fffabd #bde6ffbf; 
+  scrollbar-width: thin; 
   }
 
   html, body, #root {
@@ -26,8 +26,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:  ${({ theme }) => theme.fonts.primary};
     line-height: 1.6;
     overflow-x: hidden;
   }
-`;
+`
