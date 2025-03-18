@@ -32,4 +32,4 @@ Si deseas clonar y ejecutar este proyecto en tu máquina local, sigue estos paso
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/landingbooster.git
+   git clone https://github.com/GonzalokHM/landingbooster.git
