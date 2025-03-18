@@ -7,16 +7,18 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   /* Estilos para las barras de desplazamiento */
    ::-webkit-scrollbar {
-    width: 5px; /* Ancho de la barra de desplazamiento */
+    width: 5px; 
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #00fffabd; /* Color del thumb (la parte que el usuario puede arrastrar) */
+  background-color: rgba(0, 255, 250, 0.7);
+       border-radius: 10px;
+      transition: background-color 0.3s ease;
     scrollbar-width: thin;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #f9ff00bd; 
+    background-color: rgba(0, 255, 250, 0.9); 
   }
-  scrollbar-color: #00fffabd #bde6ffbf; 
+  scrollbar-color:rgba(0, 255, 250, 0.7) rgba(189, 230, 255, 0.75);; 
   scrollbar-width: thin; 
   }
 
