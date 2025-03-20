@@ -6,7 +6,7 @@ export const FavoritesContainer = styled.main`
   min-height: 100vh;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   font-size: 2em;
   color: ${({ theme }) => theme.colors.text};
   margin-bottom: ${({ theme }) => theme.spacing.md};

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ProductsContainer = styled.div`
+export const ProductsContainer = styled.main`
   padding: ${({ theme }) => theme.spacing.md};
   display: flex;
   flex-direction: column;

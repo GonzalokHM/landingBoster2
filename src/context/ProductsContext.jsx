@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useReducer, createContext } from 'react'
+import { useReducer, createContext, useEffect } from 'react'
 
 export const ProductContext = createContext()
 
@@ -47,7 +47,14 @@ const productReducer = (state, action) => {
 }
 
 export const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(productReducer, {})
+  const [state, dispatch] = useReducer(productReducer, {}, (initial) => {
+    const storedState = localStorage.getItem('productState')
+    return storedState ? JSON.parse(storedState) : initial
+  })
+
+  useEffect(() => {
+    localStorage.setItem('productState', JSON.stringify(state))
+  }, [state])
 
   const addFavorite = (product) => {
     dispatch({ type: 'ADD_FAVORITE', product })

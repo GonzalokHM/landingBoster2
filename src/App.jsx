@@ -9,6 +9,7 @@ import { Flex } from './components/styles/ui/Flex'
 import { ProductProvider } from './context/ProductsContext'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './components/styles/theme'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/productos' element={<Products />} />
               <Route path='/favoritos' element={<Favorites />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
             <Footer />
           </Flex>

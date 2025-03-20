@@ -7,7 +7,7 @@ const colors = {
   backgroundSecondary: '#2aff00',
   backgroundForm: 'rgba(255, 255, 255, 0.14)',
   headerBackground: '#f8f8f8',
-  footerBackground: 'rgba(51,51,51,0.12)',
+  footerBackground: 'rgb(78 228 235)',
   subTitle: '#035110',
   text: '#333',
   textSecondary: '#666',

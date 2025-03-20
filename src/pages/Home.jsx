@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect, Suspense, useRef } from 'react'
 import {
   Button,
   Slogan,
@@ -16,17 +16,28 @@ import {
 const Comments = React.lazy(() => import('../components/CommentsApi'))
 
 const Home = () => {
-  const [scrollY, setScrollY] = useState(0)
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [userData, setUserData] = useState({ nombre: '', correo: '' })
+  const homeRef = useRef(null)
 
   const handleScroll = () => {
-    const position = window.scrollY
-    setScrollY(position)
+    const scrollY = window.scrollY
+    const dynamicAngle = 25 + (scrollY % 360)
+    const baseOpacity = 0.5
+    const colorStartOpacity =
+      baseOpacity + Math.abs(Math.sin(scrollY / 100) * 0.5)
+    const colorEndOpacity =
+      baseOpacity + Math.abs(Math.cos(scrollY / 100) * 0.5)
+    if (homeRef.current) {
+      homeRef.current.style.background = `linear-gradient(${dynamicAngle}deg, rgba(197, 93, 246,${colorStartOpacity}) ${
+        scrollY % 100
+      }%, rgba(186, 235, 255,${colorEndOpacity}) 100%)`
+    }
   }
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -46,7 +57,7 @@ const Home = () => {
   }
 
   return (
-    <HomeStyled $scrollY={scrollY / 5}>
+    <HomeStyled ref={homeRef}>
       {!isFormSubmitted ? (
         <Flex>
           <Flex>
