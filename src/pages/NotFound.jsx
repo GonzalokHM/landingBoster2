@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { NotFoundContainer } from '../components/styles/NotFoundStyles'
+import { SubTitle, Text } from '../components/styles/ui'
 
 const NotFound = () => {
   return (

@@ -8,4 +8,5 @@ export const NotFoundContainer = styled.div`
   height: 80vh;
   text-align: center;
   padding: 20px;
+  background: ${({ theme }) => theme.colors.NotFoundBackground};
 `
