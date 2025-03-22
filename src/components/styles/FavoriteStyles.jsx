@@ -2,8 +2,12 @@ import styled from 'styled-components'
 
 export const FavoritesContainer = styled.main`
   padding: ${({ theme }) => theme.spacing.md};
-  background-color: ${({ theme }) => theme.colors.background};
-  min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.backgroundFavorites};
+  gap: ${({ theme }) => theme.spacing.md};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Title = styled.h2`

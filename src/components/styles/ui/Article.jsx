@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-export const HomeStyled = styled.main`
-  min-height: 100vh;
+export const Article = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background 0.5s ease;
-  overflow: auto;
+  padding: ${(props) => (props.$padding ? `${props.$padding}px` : '0')};
+  margin: 0;
 `

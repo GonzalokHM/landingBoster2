@@ -1,11 +1,18 @@
 import styled from 'styled-components'
+import { desktop } from './medias'
 
 export const ProductsContainer = styled.main`
   padding: ${({ theme }) => theme.spacing.md};
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
   gap: ${({ theme }) => theme.spacing.md};
-  background-color: rgb(0, 217, 255);
+  background-color: ${({ theme }) => theme.colors.backgroundProducts};
+  ${desktop} {
+    flex-direction: row;
+  }
 `
 
 export const ProductCard = styled.div`

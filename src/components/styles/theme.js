@@ -6,6 +6,8 @@ const colors = {
   background: '#fefefe',
   backgroundSecondary: '#2aff00',
   backgroundForm: 'rgba(255, 255, 255, 0.14)',
+  backgroundProducts: 'rgb(0, 217, 255);',
+  backgroundFavorites: 'rgba(209, 23, 255, 0.66);',
   headerBackground: '#f8f8f8',
   footerBackground: 'rgb(78 228 235)',
   subTitle: '#035110',

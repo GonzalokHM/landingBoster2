@@ -11,9 +11,15 @@ import { List } from './ui/List'
 import { ListElement } from './ui/ListElement'
 import { Remarck } from './ui/Remarck'
 import { Carrusel } from './ui/Carrusel'
+import { Article } from './ui/Article'
+import { Section } from './ui/Section'
+import { Aside } from './ui/Aside'
 
 export {
   Button,
+  Aside,
+  Article,
+  Section,
   Slogan,
   SubTitle,
   Text,

@@ -6,4 +6,5 @@ export const FooterStyle = styled.footer`
   padding: ${({ theme }) => theme.spacing.md};
   text-align: center;
   width: 100%;
+  flex: 0 0 auto;
 `

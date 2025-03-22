@@ -1,6 +1,9 @@
 import React, { useState, useEffect, Suspense, useRef } from 'react'
 import {
   Button,
+  Aside,
+  Section,
+  Article,
   Slogan,
   SubTitle,
   Text,
@@ -59,8 +62,8 @@ const Home = () => {
   return (
     <HomeStyled ref={homeRef}>
       {!isFormSubmitted ? (
-        <Flex>
-          <Flex>
+        <>
+          <Section>
             <Slogan>
               Unlock Your Service&apos;s Potential with Pro Landing Pages
             </Slogan>
@@ -72,9 +75,9 @@ const Home = () => {
             <Button $variant='primary' onClick={handleGoButton}>
               GO
             </Button>
-          </Flex>
-          <Flex>
-            <Flex>
+          </Section>
+          <Section>
+            <Article>
               <SubTitle>3x your leads and sales</SubTitle>
               <List>
                 <ListElement>🚀 Supercharge your online presence.</ListElement>
@@ -90,29 +93,31 @@ const Home = () => {
                   💡 Elevate your online marketing game with ease.
                 </ListElement>
               </List>
-            </Flex>
-            <SubTitle $setColor='action'>Take the Next Step </SubTitle>
-            <Flex $direction $padding='50'>
-              <Text $align='left'>
-                Elevate Your Strategy: Redefine Your Approach with Landing
-                Booster
-              </Text>
-              <Form id='form' onSubmit={handleSubmit}>
-                <FormLabel htmlFor='nombre'>Name:</FormLabel>
-                <FormInput type='text' id='nombre' name='nombre' required />
+            </Article>
+            <Aside>
+              <SubTitle $setColor='action'>Take the Next Step </SubTitle>
+              <Flex $direction $padding='50'>
+                <Text $align='left'>
+                  Elevate Your Strategy: Redefine Your Approach with Landing
+                  Booster
+                </Text>
+                <Form id='form' onSubmit={handleSubmit}>
+                  <FormLabel htmlFor='nombre'>Name:</FormLabel>
+                  <FormInput type='text' id='nombre' name='nombre' required />
 
-                <FormLabel htmlFor='correo'>Email:</FormLabel>
-                <FormInput type='email' id='correo' name='correo' required />
+                  <FormLabel htmlFor='correo'>Email:</FormLabel>
+                  <FormInput type='email' id='correo' name='correo' required />
 
-                <Button $variant='secondary' type='submit'>
-                  Try Now
-                </Button>
-              </Form>
-            </Flex>
-          </Flex>
-        </Flex>
+                  <Button $variant='secondary' type='submit'>
+                    Try Now
+                  </Button>
+                </Form>
+              </Flex>
+            </Aside>
+          </Section>
+        </>
       ) : (
-        <Flex>
+        <Section>
           <Text $variant='fullWidth'>
             Gracias {userData.nombre}, te hemos enviado el eBook y más
             información a {userData.correo}.
@@ -120,7 +125,7 @@ const Home = () => {
           <Suspense fallback={<div>Cargando comentarios...</div>}>
             <Comments userEmail={userData.correo} />
           </Suspense>
-        </Flex>
+        </Section>
       )}
     </HomeStyled>
   )

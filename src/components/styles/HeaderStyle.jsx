@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
   padding: ${({ theme }) => theme.spacing.sm} 20px;
   position: relative;
   background: ${({ theme }) => theme.colors.headerBackground};
+  flex: 0 0 auto;
 `
 export const Logo = styled.img`
   width: 60px;

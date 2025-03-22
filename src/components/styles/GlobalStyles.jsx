@@ -22,14 +22,18 @@ export const GlobalStyles = createGlobalStyle`
   scrollbar-width: thin; 
   }
 
-  html, body, #root {
-    height: 100%;
-    width: 100%;
+  #root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
   }
 
   body {
     font-family:  ${({ theme }) => theme.fonts.primary};
     line-height: 1.6;
-    overflow-x: hidden;
   }
+    main{
+     flex: 1 1 auto;
+    }
 `
